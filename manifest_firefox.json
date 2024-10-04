@@ -1,9 +1,9 @@
 {
-  "description": "This extension adds Bulk funcitonality to the HangarXPLOR extension. Patched by Joppie to work again.",
+  "description": "This extension adds Bulk melt and gift funcitonality to the HangarXPLOR extension. (Modified by /u/Dwayde_Wade)",
   "manifest_version": 3,
-  "name": "Star Citizen Bulk XPLORer, Patched by Joppie",
+  "name": "Star Citizen Bulk XPLORer (Dwayde's mod)",
   "short_name": "BulkXPLOR",
-  "version": "2.47",
+  "version": "4.0",
 
   "author": "/u/alluran (Peter Dolkens)",
 
