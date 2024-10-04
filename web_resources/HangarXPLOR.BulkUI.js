@@ -171,7 +171,7 @@ HangarXPLOR._callbacks.MeltConfirm = function (e) {
                     totalMelt += pledge.melt_value;
                     
                     console.log(`Succesfull melted ${pledge.pledge_name}. %c Added ${pledge.melt_value}$ to your ledger!`, "color:green; font-size:16px");
-                    melted += '<li>' + pledge.pledge_name + ' - ' + pledge.melt_value + '</li>';
+                    melted += '<li>' + pledge.pledge_name + ' - ' + pledge.melt_value + '$</li>';
                 }
 
                 if (--totalCallbacks > 0) {
