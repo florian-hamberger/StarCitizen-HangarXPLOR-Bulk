@@ -1,0 +1,160 @@
+{extends file="base_modal"}
+{block name='modal_content'}
+<style>
+  .gift-but {
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+  }
+
+  .pass-input {
+    background-color: rgba(0, 0, 0, .4);
+    border: 1px solid rgba(22, 42, 63, .8);
+    font-size: 12px;
+    color: #355e78;
+    width: 100%;
+    padding: 10px 15px;
+    display: block;
+    margin-bottom: 3px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .2s !important;
+    -moz-transition: all .2s !important;
+    -o-transition: all .2s !important;
+    -ms-transition: all .2s !important;
+    transition: all .2s !important;
+  }
+
+  .name-input {
+    background-color: rgba(0, 0, 0, .4);
+    border: 1px solid rgba(22, 42, 63, .8);
+    font-size: 12px;
+    color: #355e78;
+    width: 100%;
+    padding: 10px 15px;
+    display: block;
+    margin-bottom: 3px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .2s !important;
+    -moz-transition: all .2s !important;
+    -o-transition: all .2s !important;
+    -ms-transition: all .2s !important;
+    transition: all .2s !important;
+  }
+
+  .email-input {
+    background-color: rgba(0, 0, 0, .4);
+    border: 1px solid rgba(22, 42, 63, .8);
+    font-size: 12px;
+    color: #355e78;
+    width: 100%;
+    padding: 10px 15px;
+    display: block;
+    margin-bottom: 3px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .2s !important;
+    -moz-transition: all .2s !important;
+    -o-transition: all .2s !important;
+    -ms-transition: all .2s !important;
+    transition: all .2s !important;
+  }
+
+  .modals .modal-wrapper {
+    margin-top: 10% !important;
+  }
+
+  .gift_name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #7696ae;
+    display: block;
+    margin: 8px 0;
+  }
+
+  .gift_email {
+    font-size: 12px;
+    font-weight: 700;
+    color: #7696ae;
+    display: block;
+    margin: 8px 0;
+  }
+  
+</style>
+<div id="gift" class="inner-content">
+  <h2><span class="icon"></span>GIFT PACKAGE</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <div class="clearfix">
+      <form name="gift-bulk" action="" method="POST">
+        <div class="error-message js-error-message"></div>
+        <div class="success-message js-success-message"></div>
+        <div class="panes">
+          <!-- <div class="pane step1">
+            <div class="warn-panel">
+              <div class="exagon">
+                <div class="hand"></div>
+                <span><strong style="color: red;">ATTENTION</strong></span>
+              </div>
+            </div>
+            
+            <p>This is the <strong>last pledge</strong> in your account with <span class="important">ALPHA ACCESS</span>.  If you go through with this operation, you will <strong>permanently</strong> lose access to all alpha modules.</p>
+    
+            <span class="submit-wrapper js-gift-next right disabled">
+              <span class="submit-hover trans-02s trans-opacity"></span>
+              <input type="submit" value="CONTINUE" class="gift-but shadow-button trans-02s trans-color" />
+            </span>
+          </div> -->
+    
+          <div class="pane step2">
+            <p class="head">You are about to gift <strong>{$item_name}</strong>  pledge to another citizen by email. This will <span class="important">transfer your pledge</span> as soon as it is accepted by the recipient. You can cancel the gift at any time until then.</p>
+          
+            <p><strong style="color: red;">WARNING!<br/>Once your gift has been claimed it will be bound to the recipient's account and cannot be re-gifted.</strong></p>
+            
+            <div class="bottom">
+              <p>Type in your password to confirm:</p>
+              <span class="corner-wrapper">
+                <input type="password" name="current_password" value="" class="pass-input trans-02s trans-color trans-box-shadoww" />
+                <span class="corner corner-top-left"></span>
+                <span class="corner corner-top-right"></span>
+                <span class="corner corner-bottom-left"></span>
+                <span class="corner corner-bottom-right"></span>
+              </span>
+              <br><br>
+              <p>Who should we send this gifts to?</p>
+              <p><strong style="color: red;">NB!</strong> All items will be sent to this citizen!</p>
+              <label class="gift_name" for="gift_name">Recipient name</label>
+              <span class="corner-wrapper">
+                <input type="text" name="gift_name" id="gift_name" value="" class="pass-input trans-02s trans-color trans-box-shadoww" />
+                <span class="corner corner-top-left"></span>
+                <span class="corner corner-top-right"></span>
+                <span class="corner corner-bottom-left"></span>
+                <span class="corner corner-bottom-right"></span>
+              </span>
+              <label class="gift_email" for="gift_email">Recipient email</label>
+              <span class="corner-wrapper">
+                <input type="text" name="gift_email" id="gift_email" value="" class="email-input trans-02s trans-color trans-box-shadoww" />
+                <span class="corner corner-top-left"></span>
+                <span class="corner corner-top-right"></span>
+                <span class="corner corner-bottom-left"></span>
+                <span class="corner corner-bottom-right"></span>
+              </span>
+      
+              {* btn submit *}
+              <span class="submit-wrapper js-submit right">
+                <span class="submit-hover trans-02s trans-opacity"></span>
+                <input type="submit" value="GIFT" class="gift-but shadow-button trans-02s trans-color" />
+              </span>
+            </div>
+         </div>
+         </div>
+      </form>
+    </div>
+    <div class="separator"></div>
+  </div>
+</div>
+{/block}
