@@ -1,6 +1,6 @@
-# BulkXPLOR
+# Star Citizen BulkXPLOR modified
 
-This project aims to add Bulk Melting and Gifting functionality to the [HangarXPLOR](https://chrome.google.com/webstore/detail/star-citizen-hangar-xplor/bhkgemjdepodofcnmekdobmmbifemhkc) plugin.
+This project aims to add Bulk Melting and Gifting functionality to the [HangarXPLOR] plugin.
 
 It helps to improve the default Hangar page at https://robertsspaceindustries.com/account/pledges.
 
@@ -16,10 +16,12 @@ Planned features include:
 
 This plugin will only work if [HangarXPLOR](https://chrome.google.com/webstore/detail/star-citizen-hangar-xplor/bhkgemjdepodofcnmekdobmmbifemhkc) is already installed.
 
-# Google Chrome Extension
+# Browser Support 
 
-https://chrome.google.com/webstore/detail/star-citizen-bulk-xplorer/hhmhabdjafcnejipbcpfdkdhfolfpheo
+* [Google Chrome Extension]
+* [Firefox Add-On]
 
-# Screenshots
 
-![New and improved UI](http://i.imgur.com/Om3Zzbv.png "New and improved UI")
+# Modified
+
+This is modified version by /u/Dwayde_Wade. If you have any problems/issues please feel free to contact me. Also you can ask for new features.
