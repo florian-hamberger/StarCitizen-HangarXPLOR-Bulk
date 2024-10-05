@@ -8,8 +8,6 @@ WARNING: This plugin has been split off from the original HangarXPLOR, as it add
 
 Current features include:
 * Add bulk Melt button
-
-Planned features include:
 * Add bulk Gift button
 
 # Installation Instructions
