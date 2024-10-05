@@ -12,7 +12,7 @@ Current features include:
 
 # Installation Instructions
 
-This plugin will only work if [HangarXPLOR](https://chrome.google.com/webstore/detail/star-citizen-hangar-xplor/bhkgemjdepodofcnmekdobmmbifemhkc) is already installed.
+This plugin will only work if [HangarXPLOR](https://github.com/Dwayde/StarCitizen-HangarXPLOR) is already installed.
 
 # Browser Support 
 
