@@ -79,7 +79,7 @@ HangarXPLOR._callbacks.GiftConfirm = function (e) {
                                 document.location.reload();
                             } else {
                                 setTimeout(function () {
-                                    if (confirm("Refresh page now? (Don't forget after gifting its required to reload hangar)") == true) {
+                                    if (confirm("Refresh page now? (Don't forget after gifting its required for hangar reloading)") == true) {
                                         document.location.reload();
                                     } else {
                                          setTimeout(function () { 
@@ -185,7 +185,7 @@ HangarXPLOR._callbacks.MeltConfirm = function (e) {
                                 document.location.reload();
                             } else {
                                 setTimeout(function () {
-                                    if (confirm("Refresh page now? (Don't forget after melting its required to reload hangar)") == true) {
+                                    if (confirm("Refresh page now? (Don't forget after melting its required for hangar reloading)") == true) {
                                         document.location.reload();
                                     } else {
                                          setTimeout(function () { 
