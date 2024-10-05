@@ -2,6 +2,13 @@
 {block name='modal_content'}
 <style>
 
+  .reclaimtxt {
+    color: #00f0ff;
+    background-color: transparent;
+    border-width: 0px !important;
+    margin-top: 8px;
+  }
+
   .error-message {
     color: #a32514 !important;
   }
@@ -63,7 +70,13 @@
     
             <span class="submit-wrapper js-reclaim-next right disabled">
               <span class="submit-hover trans-02s trans-opacity"></span>
-              <input type="submit" value="CONTINUE" class="reclaim-but shadow-button trans-02s trans-color" />
+              <span class="shadow-button trans-02s trans-color">
+                <input type="submit" value="CONTINUE" class="reclaimtxt label js-label trans-02s">
+                <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+                <span class="left-section"></span>
+                <span class="right-section"></span>
+              </span>
+              <!-- <input type="submit" value="CONTINUE" class="reclaim-but shadow-button trans-02s trans-color" /> -->
             </span>
           </div>
     
@@ -86,7 +99,13 @@
               {* btn submit *}
               <span class="submit-wrapper js-submit right">
                 <span class="submit-hover trans-02s trans-opacity"></span>
-                <input type="submit" value="RECLAIM" class="reclaim-but shadow-button trans-02s trans-color" />
+                <span class="shadow-button trans-02s trans-color">
+                  <input type="submit" value="RECLAIM" class="reclaimtxt label js-label trans-02s">
+                  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+                  <span class="left-section"></span>
+                  <span class="right-section"></span>
+                </span>
+                <!-- <input type="submit" value="RECLAIM" class="reclaim-but shadow-button trans-02s trans-color" /> -->
               </span>
             </div>
          </div>
