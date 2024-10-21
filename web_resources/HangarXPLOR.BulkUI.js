@@ -21,7 +21,7 @@ HangarXPLOR._callbacks.Gift = function (e) {
         noclose_btn: true
     });
     
-    HangarXPLOR.BulkUI.modal.holder.find(".panes").css({ left: '-535px' });
+    HangarXPLOR.BulkUI.modal.holder.find(".panes").css({ left: '0px' });
 
     $('#gift .panes .pane.step1').hide(); //TODO: Show warning if game package is gifted
 
@@ -190,7 +190,7 @@ HangarXPLOR._callbacks.Melt = function (e) {
         noclose_btn: true
     });
 
-    HangarXPLOR.BulkUI.modal.holder.find(".panes").css({ left: '-535px' });
+    HangarXPLOR.BulkUI.modal.holder.find(".panes").css({ left: '0px' });
 
     $('#reclaim .panes .pane.step1').hide(); //TODO: Show warning if game package is melted
 
