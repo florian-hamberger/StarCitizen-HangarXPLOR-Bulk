@@ -3,7 +3,7 @@
   "manifest_version": 3,
   "name": "Star Citizen Bulk XPLORer (Dwayde's mod)",
   "short_name": "BulkXPLOR",
-  "version": "5.1",
+  "version": "5.4",
   
   "author": "/u/alluran (Peter Dolkens)",
   
@@ -27,7 +27,8 @@
       "resources": [
         "/web_resources/HangarXPLOR.BulkUI.js",
         "/web_resources/HangarXPLOR.ReclaimBulk.html",
-        "/web_resources/HangarXPLOR.GiftBulk.html"
+        "/web_resources/HangarXPLOR.GiftBulk.html",
+        "/web_resources/HangarXPLOR.Bulk.css"
       ],
       "matches": [ "https://robertsspaceindustries.com/*" ]
     }

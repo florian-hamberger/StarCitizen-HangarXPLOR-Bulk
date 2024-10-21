@@ -37,11 +37,22 @@ HangarXPLOR._callbacks.GiftConfirm = function (e) {
      var totalCallbacks = HangarXPLOR._selected.length;
      var totalSuccess = 0;
      var totalError = 0;
-     var gifted = '';
-     var errors = '';
+     //var gifted = '';
+     //var errors = '';
+     let errors = document.createElement("ul");
+     let gifted = document.createElement("ul");
  
      $('#gift .panes').hide();
      $('#gift form[name=gift-bulk]').css({'overflow':'auto', "max-height":"500px"});
+
+     $('#reclaim .js-error-message').empty();
+     $('#reclaim .js-error-message').hide();
+     $('#reclaim .js-success-message').empty();
+     $('#reclaim .js-success-message').hide();
+     $('#gift .js-error-message').empty();
+     $('#gift .js-error-message').hide();
+     $('#gift .js-success-message').empty();
+     $('#gift .js-success-message').hide();
 
      giftNext();
 
@@ -61,13 +72,39 @@ HangarXPLOR._callbacks.GiftConfirm = function (e) {
             success: function (result) {
                 if (!result.success) {
                     totalError++;
-                    errors += '<li>' + pledge.pledge_name + ' - ' + result.msg + '</li>';
+                    let msg = document.createElement('li');
+                    if(result.msg.includes("<strong>")) {
+                        let errormsg = document.createElement('strong');
+                        var subString = result.msg.substring(
+                            result.msg.indexOf("<strong>") + 8, 
+                            result.msg.indexOf("</strong>")
+                          );
+                        errormsg.textContent = subString;
+                        msg.textContent = pledge.pledge_name + ' - ' + 
+                          result.msg.substring(
+                            0, 
+                            result.msg.indexOf("<strong>")
+                          ) + " ";
+                        msg.append(errormsg);
+                        msg.textContent += result.msg.substring(
+                            result.msg.indexOf("</strong>") + 9, 
+                            result.msg.length
+                          );
+                        errors.append(errormsg);
+                    } else {
+                        msg.textContent = pledge.pledge_name + ' - ' + result.msg;
+                    }
+                    errors.append(msg);
+                    //errors += '<li>' + pledge.pledge_name + ' - ' + result.msg + '</li>';
                     console.log(`Failed to gift ${pledge.pledge_name} (${pledge.pledge_id}) for the following reason: \n%c${result.msg}`, "color:red; font-size:16px");     
                 } else {
                     totalSuccess++;
                     
                     console.log(`Succesfull gifted ${pledge.pledge_name}. %c!`, "color:green; font-size:16px");
-                    gifted += '<li>' + pledge.pledge_name + '</li>';
+                    let msg = document.createElement('li');
+                    msg.textContent = pledge.pledge_name;
+                    gifted.append(msg);
+                    //gifted += '<li>' + pledge.pledge_name + '</li>';
                 }
 
                 if (--totalCallbacks > 0) {
@@ -97,15 +134,35 @@ HangarXPLOR._callbacks.GiftConfirm = function (e) {
                         }, 5000);
                     }
                 }
-
                 
                 if (totalSuccess > 0) {
-                    $('#gift .js-success-message').html("Your gifted <strong>" + totalSuccess + "</strong> items!" + '<ul>' + gifted + '</ul>').fadeIn(300);
+                    //$('#gift .js-success-message').html('');
+                    $('#gift .js-success-message').empty();
+                    let txt = document.createElement("div");
+                    txt.textContent = "Your gifted ";
+                    let strong = document.createElement("strong");
+                    strong.textContent = totalSuccess;
+                    txt.append(strong);
+                    txt.textContent += " items!";
+                    txt.append(gifted);
+                    $('#gift .js-success-message').append(txt).fadeIn(300);
+                    //$('#gift .js-success-message').html("Your gifted <strong>" + totalSuccess + "</strong> items!" + '<ul>' + gifted + '</ul>').fadeIn(300);
+                } else {
+                    $('#gift .js-success-message').empty();
+                    $('#gift .js-success-message').hide();
                 }
 
                 if (totalError > 0) {
-                    $('#gift .js-error-message').html('There were errors completing your request. <ul>' + errors + '</ul>').fadeIn(300);
+                    //$('#gift .js-error-message').html('');
+                    $('#gift .js-error-message').empty();
+                    let txt = document.createElement("div");
+                    txt.textContent = 'There were errors completing your request.';
+                    txt.append(errors);
+                    $('#gift .js-error-message').append(txt);
+                    //$('#gift .js-error-message').html('There were errors completing your request. <ul>' + errors + '</ul>').fadeIn(300);
+                    $('#gift .js-error-message').fadeIn(300);
                 } else {
+                    $('#gift .js-error-message').empty();
                     $('#gift .js-error-message').hide();
                 }
 
@@ -144,11 +201,23 @@ HangarXPLOR._callbacks.MeltConfirm = function (e) {
     var totalSuccess = 0;
     var totalError = 0;
     var totalMelt = 0;
-    var melted = '';
-    var errors = '';
+    //var melted = '';
+    //var errors = '';
+    let errors = document.createElement("ul");
+    let melted = document.createElement("ul");
 
     $('#reclaim .panes').hide();
     $('#reclaim form[name=reclaim-bulk]').css({'overflow':'auto', "max-height":"500px"});
+
+    $('#reclaim .js-error-message').empty();
+    $('#reclaim .js-error-message').hide();
+    $('#reclaim .js-success-message').empty();
+    $('#reclaim .js-success-message').hide();
+    $('#gift .js-error-message').empty();
+    $('#gift .js-error-message').hide();
+    $('#gift .js-success-message').empty();
+    $('#gift .js-success-message').hide();
+
 
     meltNext();
 
@@ -166,14 +235,40 @@ HangarXPLOR._callbacks.MeltConfirm = function (e) {
             success: function (result) {
                 if (!result.success) {
                     totalError++;
-                    errors += '<li>' + pledge.pledge_name + ' - ' + result.msg + '</li>';
+                    //errors += '<li>' + pledge.pledge_name + ' - ' + result.msg + '</li>';
+                    let msg = document.createElement('li');
+                    if(result.msg.includes("<strong>")) {
+                        let errormsg = document.createElement('strong');
+                        var subString = result.msg.substring(
+                            result.msg.indexOf("<strong>") + 8, 
+                            result.msg.indexOf("</strong>")
+                          );
+                        errormsg.textContent = subString;
+                        msg.textContent = pledge.pledge_name + ' - ' + 
+                          result.msg.substring(
+                            0, 
+                            result.msg.indexOf("<strong>")
+                          ) + " ";
+                        msg.append(errormsg);
+                        msg.textContent += result.msg.substring(
+                            result.msg.indexOf("</strong>") + 9, 
+                            result.msg.length
+                          );
+                        errors.append(errormsg);
+                    } else {
+                        msg.textContent = pledge.pledge_name + ' - ' + result.msg;
+                    }
+                    errors.append(msg);
                     console.log(`Failed to melt ${pledge.pledge_name} (${pledge.pledge_id}) for the following reason: \n%c${result.msg}`, "color:red; font-size:16px");     
                 } else {
                     totalSuccess++;
                     totalMelt += pledge.melt_value;
                     
                     console.log(`Succesfull melted ${pledge.pledge_name}. %c Added ${pledge.melt_value}$ to your ledger!`, "color:green; font-size:16px");
-                    melted += '<li>' + pledge.pledge_name + ' - ' + pledge.melt_value + '$</li>';
+                    let msg = document.createElement('li');
+                    msg.textContent = pledge.pledge_name + ' - ' + pledge.melt_value + '$';
+                    melted.append(msg);
+                    //melted += '<li>' + pledge.pledge_name + ' - ' + pledge.melt_value + '$</li>';
                 }
 
                 if (--totalCallbacks > 0) {
@@ -202,16 +297,35 @@ HangarXPLOR._callbacks.MeltConfirm = function (e) {
                             }
                         }, 5000);
                     }
-                }
+                }       
 
                 
                 if (totalSuccess > 0) {
-                    $('#reclaim .js-success-message').html("Your Store ledger was credited with <strong>" + totalMelt.toLocaleString('en-US', { minimumFractionDigits: 2 }) + "$</strong>" + '<ul>' + melted + '</ul>').fadeIn(300);
+                    //$('#reclaim .js-success-message').html('');
+                    $('#reclaim .js-success-message').empty();
+                    let txt = document.createElement("div");
+                    txt.textContent = "Your Store ledger was credited with ";
+                    let strong = document.createElement("strong");
+                    strong.textContent = totalMelt.toLocaleString('en-US', { minimumFractionDigits: 2 }) + "$";
+                    txt.append(strong);
+                    txt.append(melted);
+                    $('#reclaim .js-success-message').append(txt).fadeIn(300);
+                    //$('#reclaim .js-success-message').html("Your Store ledger was credited with <strong>" + totalMelt.toLocaleString('en-US', { minimumFractionDigits: 2 }) + "$</strong>" + '<ul>' + melted + '</ul>').fadeIn(300);
+                } else {
+                    $('#reclaim .js-success-message').empty();
+                    $('#reclaim .js-success-message').hide();
                 }
 
                 if (totalError > 0) {
-                    $('#reclaim .js-error-message').html('There were errors completing your request. <ul>' + errors + '</ul>').fadeIn(300);
+                    //$('#reclaim .js-error-message').html('');
+                    $('#reclaim .js-error-message').empty();
+                    let txt = document.createElement("div");
+                    txt.textContent = 'There were errors completing your request.';
+                    txt.append(errors);
+                    $('#reclaim .js-error-message').append(txt).fadeIn(300);
+                    //$('#reclaim .js-error-message').html('There were errors completing your request. <ul>' + errors + '</ul>').fadeIn(300);
                 } else {
+                    $('#reclaim .js-error-message').empty();
                     $('#reclaim .js-error-message').hide();
                 }
 

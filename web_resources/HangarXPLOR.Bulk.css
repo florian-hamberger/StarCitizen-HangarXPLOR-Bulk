@@ -1,0 +1,136 @@
+  .gifttxt {
+    color: #00f0ff;
+    background-color: transparent;
+    border-width: 0px !important;
+    margin-top: 8px;
+  }
+
+  .gift-but {
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+  }
+
+  .name-input {
+    background-color: rgba(0, 0, 0, .4);
+    border: 1px solid rgba(22, 42, 63, .8);
+    font-size: 12px;
+    color: #355e78;
+    width: 100%;
+    padding: 10px 15px;
+    display: block;
+    margin-bottom: 3px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .2s !important;
+    -moz-transition: all .2s !important;
+    -o-transition: all .2s !important;
+    -ms-transition: all .2s !important;
+    transition: all .2s !important;
+  }
+
+  .email-input {
+    background-color: rgba(0, 0, 0, .4);
+    border: 1px solid rgba(22, 42, 63, .8);
+    font-size: 12px;
+    color: #355e78;
+    width: 100%;
+    padding: 10px 15px;
+    display: block;
+    margin-bottom: 3px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .2s !important;
+    -moz-transition: all .2s !important;
+    -o-transition: all .2s !important;
+    -ms-transition: all .2s !important;
+    transition: all .2s !important;
+  }
+
+  .modals .modal-wrapper {
+    margin-top: 10% !important;
+  }
+
+  .gift_name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #7696ae;
+    display: block;
+    margin: 8px 0;
+  }
+
+  .gift_email {
+    font-size: 12px;
+    font-weight: 700;
+    color: #7696ae;
+    display: block;
+    margin: 8px 0;
+  }
+
+  .reclaimtxt {
+    color: #00f0ff;
+    background-color: transparent;
+    border-width: 0px !important;
+    margin-top: 8px;
+  }
+
+
+  .error-message {
+    background: url(https://cdn.robertsspaceindustries.com/static/images/signin_modal_error.png) no-repeat 7px 50% rgba(178, 34, 34, .2);
+    border: 1px solid #502a36;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    font-size: 11px;
+    line-height: 14px;
+    color: #b00;
+    padding: 11px 30px 11px 60px;
+    display: none;
+    min-height: 28px;
+  }
+
+  .success-message {
+    background: url(https://cdn.robertsspaceindustries.com/static/images/signin_modal_success.png) no-repeat 7px 50% rgba(27, 188, 41, .2);
+    border: 1px solid #106d1a;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    font-size: 11px;
+    line-height: 14px;
+    color: #1bb52c !important;
+    padding: 11px 30px 11px 60px;
+    display: none;
+    min-height: 28px;
+  }
+
+  .reclaim-but {
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+  }
+
+  .pass-input {
+    background-color: rgba(0, 0, 0, .4);
+    border: 1px solid rgba(22, 42, 63, .8);
+    font-size: 12px;
+    color: #355e78;
+    width: 100%;
+    padding: 10px 15px;
+    display: block;
+    margin-bottom: 3px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .2s !important;
+    -moz-transition: all .2s !important;
+    -o-transition: all .2s !important;
+    -ms-transition: all .2s !important;
+    transition: all .2s !important;
+  }
+
+  .modals .modal-wrapper {
+    margin-top: 10% !important;
+  }

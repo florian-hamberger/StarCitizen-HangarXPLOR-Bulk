@@ -2,7 +2,9 @@
 !function() {
   var namespace = 'BulkXPLOR';
   
-  var styles = [ ];
+  var styles = [
+    'web_resources/HangarXPLOR.Bulk.css',
+   ];
   
   var scripts = [
       'web_resources/HangarXPLOR.BulkUI.js',
