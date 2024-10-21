@@ -23,6 +23,8 @@ HangarXPLOR._callbacks.Gift = function (e) {
     
     HangarXPLOR.BulkUI.modal.holder.find(".panes").css({ left: '-535px' });
 
+    $('#gift .panes .pane.step1').hide(); //TODO: Show warning if game package is gifted
+
     $(document).on('submit', 'form[name=gift-bulk]', HangarXPLOR._callbacks.GiftConfirm);
 
     HangarXPLOR.BulkUI.modal.fadeIn(300);
@@ -189,6 +191,8 @@ HangarXPLOR._callbacks.Melt = function (e) {
     });
 
     HangarXPLOR.BulkUI.modal.holder.find(".panes").css({ left: '-535px' });
+
+    $('#reclaim .panes .pane.step1').hide(); //TODO: Show warning if game package is melted
 
     $(document).on('submit', 'form[name=reclaim-bulk]', HangarXPLOR._callbacks.MeltConfirm);
 

@@ -70,6 +70,17 @@
     margin: 8px 0;
   }
 
+  .modals #gift .pane.step1 {
+    float: left;
+    width: 425px;
+    margin-right: 110px;
+  }
+
+  .modals #gift .pane.step2 {
+    float: left;
+    width: 425px;
+  }
+
   .reclaimtxt {
     color: #00f0ff;
     background-color: transparent;
@@ -77,6 +88,7 @@
     margin-top: 8px;
   }
 
+  
 
   .error-message {
     background: url(https://cdn.robertsspaceindustries.com/static/images/signin_modal_error.png) no-repeat 7px 50% rgba(178, 34, 34, .2);
