@@ -199,3 +199,9 @@
     min-width: 400px;
     max-width: 480px;
   }
+
+  .modals #gift p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #5a7a93;
+}
