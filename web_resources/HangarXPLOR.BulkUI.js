@@ -1,6 +1,8 @@
 
 var HangarXPLOR = HangarXPLOR || {};
 
+var auto_refresh = true;
+
 HangarXPLOR.BulkEnabled = true;
 
 HangarXPLOR._callbacks = HangarXPLOR._callbacks || {};
@@ -113,27 +115,36 @@ HangarXPLOR._callbacks.GiftConfirm = function (e) {
                     setTimeout(function () { giftNext(); }, 3000);
                 } else {
                     if(totalSuccess > 0) {
-                        setTimeout(function () { 
-                            if (confirm("Refresh page now?") == true) {
+                        auto_refresh = document.getElementById('auto_refresh_gift').checked;
+                        if(auto_refresh || auto_refresh == "true" || auto_refresh == 1 || auto_refresh == "1") {
+                            setTimeout(function () {
                                 document.location.reload();
-                            } else {
-                                setTimeout(function () {
-                                    if (confirm("Refresh page now? (Don't forget after gifting its required for hangar reloading)") == true) {
+                            }, 3000);
+                        } else {
+                            setTimeout(function () { 
+                                if (confirm("Refresh page now?") == true) {
+                                    setTimeout(function () {
                                         document.location.reload();
-                                    } else {
-                                         setTimeout(function () { 
-                                            if (confirm("Refresh page now? (Page will be auto-refreshed in 60 seconds if cancel now)") == true) {
-                                                document.location.reload();
-                                            } else {
-                                                setTimeout(function () {
+                                    }, 3000);
+                                } else {
+                                    setTimeout(function () {
+                                        if (confirm("Refresh page now? (Don't forget after gifting its required for hangar reloading)") == true) {
+                                            document.location.reload();
+                                        } else {
+                                             setTimeout(function () { 
+                                                if (confirm("Refresh page now? (Page will be auto-refreshed in 60 seconds if cancel now)") == true) {
                                                     document.location.reload();
-                                                }, 60000);
-                                            }
-                                         }, 10000);
-                                    }
-                                 }, 10000);
-                            }
-                        }, 5000);
+                                                } else {
+                                                    setTimeout(function () {
+                                                        document.location.reload();
+                                                    }, 60000);
+                                                }
+                                             }, 10000);
+                                        }
+                                     }, 10000);
+                                }
+                            }, 5000);
+                        }
                     }
                 }
                 
@@ -279,27 +290,36 @@ HangarXPLOR._callbacks.MeltConfirm = function (e) {
                     setTimeout(function () { meltNext(); }, 3000);
                 } else {
                     if(totalSuccess > 0) {
-                        setTimeout(function () { 
-                            if (confirm("Refresh page now?") == true) {
+                        auto_refresh = document.getElementById('auto_refresh_reclaim').checked;
+                        if(auto_refresh || auto_refresh == "true" || auto_refresh == 1 || auto_refresh == "1") {
+                            setTimeout(function () {
                                 document.location.reload();
-                            } else {
-                                setTimeout(function () {
-                                    if (confirm("Refresh page now? (Don't forget after melting its required for hangar reloading)") == true) {
+                            }, 3000);
+                        } else {
+                            setTimeout(function () { 
+                                if (confirm("Refresh page now?") == true) {
+                                    setTimeout(function () {
                                         document.location.reload();
-                                    } else {
-                                         setTimeout(function () { 
-                                            if (confirm("Refresh page now? (Page will be auto-refreshed in 60 seconds if cancel now)") == true) {
-                                                document.location.reload();
-                                            } else {
-                                                setTimeout(function () {
+                                    }, 3000);
+                                } else {
+                                    setTimeout(function () {
+                                        if (confirm("Refresh page now? (Don't forget after melting its required for hangar reloading)") == true) {
+                                            document.location.reload();
+                                        } else {
+                                             setTimeout(function () { 
+                                                if (confirm("Refresh page now? (Page will be auto-refreshed in 60 seconds if cancel now)") == true) {
                                                     document.location.reload();
-                                                }, 60000);
-                                            }
-                                         }, 10000);
-                                    }
-                                 }, 10000);
-                            }
-                        }, 5000);
+                                                } else {
+                                                    setTimeout(function () {
+                                                        document.location.reload();
+                                                    }, 60000);
+                                                }
+                                             }, 10000);
+                                        }
+                                     }, 10000);
+                                }
+                            }, 5000);
+                        }
                     }
                 }       
 
