@@ -305,3 +305,10 @@ input:checked + .slider:before {
   margin-top: 0px;
   margin-bottom: 5px;
 }
+
+.continuestep {
+  margin-top: 20px;
+  cursor: pointer;
+  width: 75px;
+  left: -50px;
+}
