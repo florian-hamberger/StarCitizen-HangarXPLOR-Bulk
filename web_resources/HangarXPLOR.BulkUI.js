@@ -25,7 +25,13 @@ HangarXPLOR._callbacks.Gift = function (e) {
     
     HangarXPLOR.BulkUI.modal.holder.find(".panes").css({ left: '0px' });
 
-    $('#gift .panes .pane.step1').hide(); //TODO: Show warning if game package is gifted
+    if(HangarXPLOR._selectedPackages > 0) {
+        $('#gift .panes .pane.step1').show();
+        $('#gift .panes .pane.step2').hide();
+    } else {
+        $('#gift .panes .pane.step1').hide();
+        $('#gift .panes .pane.step2').show();
+    }
 
     $(document).on('submit', 'form[name=gift-bulk]', HangarXPLOR._callbacks.GiftConfirm);
 
@@ -185,6 +191,18 @@ HangarXPLOR._callbacks.GiftConfirm = function (e) {
      }
 }
 
+function confirm_alert(type) {
+
+    if(type == "GIFT") {
+        $('#gift .panes .pane.step1').fadeOut(300);
+        $('#gift .panes .pane.step2').fadeIn(300);
+    }
+    
+    if(type == "RECLAIM") {
+        $('#reclaim .panes .pane.step1').fadeOut(300);
+        $('#reclaim .panes .pane.step2').fadeIn(300);
+    }
+}
 HangarXPLOR._callbacks.Melt = function (e) {
     e.preventDefault();
     window.Main.closeModal();
@@ -203,7 +221,14 @@ HangarXPLOR._callbacks.Melt = function (e) {
 
     HangarXPLOR.BulkUI.modal.holder.find(".panes").css({ left: '0px' });
 
-    $('#reclaim .panes .pane.step1').hide(); //TODO: Show warning if game package is melted
+    if(HangarXPLOR._selectedPackages > 0) {
+        $('#reclaim .panes .pane.step1').show();
+        $('#reclaim .panes .pane.step2').hide();
+    } else {
+        $('#reclaim .panes .pane.step1').hide();
+        $('#reclaim .panes .pane.step2').show();
+    }
+
 
     $(document).on('submit', 'form[name=reclaim-bulk]', HangarXPLOR._callbacks.MeltConfirm);
 
