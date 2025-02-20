@@ -240,6 +240,11 @@ HangarXPLOR._callbacks.Melt = function (e) {
         $('#reclaim .panes .pane.step2').show();
     }
 
+    if (itemListContainsZeroValuePledge) {
+        $('#reclaim .section-melting-possible').hide();
+        $('#reclaim .section-melting-not-possible').show();
+    }
+
 
     $(document).on('submit', 'form[name=reclaim-bulk]', HangarXPLOR._callbacks.MeltConfirm);
 
