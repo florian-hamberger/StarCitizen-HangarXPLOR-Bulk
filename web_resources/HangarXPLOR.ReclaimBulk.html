@@ -33,41 +33,61 @@
           </div>
     
           <div class="pane step2">
-            <p class="head">You are about to reclaim <strong>{$item_name}</strong>. This will <span class="important">delete the pledge from your account</span> and give you <strong>{$item_price}</strong> in store credits.</p>
-          
-            <p><strong style="color: red;">WARNING!<br/>This action is PERMANENT and cannot be undone.</strong></p>
-            <p>Purchases made using store credits are <strong>account bound</strong> and non giftable.</p>
+            <div class="disclaimer-box">
+              <table style="width: 100%">
+                <tr>
+                  <th>
+                    <p><b>Pledge Name</b></p>
+                  </th>
+                  <th>
+                    <p><b>Value</b></p>
+                  </th>
+                </tr>
+                {$item_table}
+              </table>
+            </div>
+            <p class="head">You are about to reclaim <strong>{$item_count} pledges</strong>. This will <span class="important">delete the pledge(s) from your account</span> and give you <strong>{$items_total_price}</strong> in store credits.</p>
             
-            <div class="bottom">
-              <p>Type in your password to confirm:</p>
-              <span class="corner-wrapper">
-                <input type="password" name="current_password" value="" class="pass-input trans-02s trans-color trans-box-shadoww" />
-                <span class="corner corner-top-left"></span>
-                <span class="corner corner-top-right"></span>
-                <span class="corner corner-bottom-left"></span>
-                <span class="corner corner-bottom-right"></span>
-              </span>
+            <div class="section-melting-not-possible" style="display: none">
+              <p><strong style="color: red;">WARNING!<br />You have selected one or more pledges that have a value of
+                  $0.00 USD.</strong></p>
+            </div>
 
-              <label class="reclaim-switch-txt">
-                Auto-reload hangar on complete:
-              </label>
-              <br><br>
-              <label class="reclaim-switch switch">
-                <input id="auto_refresh_reclaim" value=1 type="checkbox" checked>
-                <span class="reclaim-slider slider round"></span>
-              </label>
-      
-              {* btn submit *}
-              <span class="submit-wrapper js-submit right">
-                <span class="submit-hover trans-02s trans-opacity"></span>
-                <span class="shadow-button trans-02s trans-color">
-                  <input type="submit" value="RECLAIM" class="reclaimtxt label js-label trans-02s">
-                  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
-                  <span class="left-section"></span>
-                  <span class="right-section"></span>
+            <div class="section-melting-possible">
+              <p><strong style="color: red;">WARNING!<br/>This action is PERMANENT and cannot be undone.</strong></p>
+              <p>Purchases made using store credits are <strong>account bound</strong> and non giftable.</p>
+              
+              <div class="bottom">
+                <p>Type in your password to confirm:</p>
+                <span class="corner-wrapper">
+                  <input type="password" name="current_password" value="" class="pass-input trans-02s trans-color trans-box-shadoww" />
+                  <span class="corner corner-top-left"></span>
+                  <span class="corner corner-top-right"></span>
+                  <span class="corner corner-bottom-left"></span>
+                  <span class="corner corner-bottom-right"></span>
                 </span>
-                <!-- <input type="submit" value="RECLAIM" class="reclaim-but shadow-button trans-02s trans-color" /> -->
-              </span>
+
+                <label class="reclaim-switch-txt">
+                  Auto-reload hangar on complete:
+                </label>
+                <br><br>
+                <label class="reclaim-switch switch">
+                  <input id="auto_refresh_reclaim" value=1 type="checkbox" checked>
+                  <span class="reclaim-slider slider round"></span>
+                </label>
+        
+                {* btn submit *}
+                <span class="submit-wrapper js-submit right">
+                  <span class="submit-hover trans-02s trans-opacity"></span>
+                  <span class="shadow-button trans-02s trans-color">
+                    <input type="submit" value="RECLAIM" class="reclaimtxt label js-label trans-02s">
+                    <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+                    <span class="left-section"></span>
+                    <span class="right-section"></span>
+                  </span>
+                  <!-- <input type="submit" value="RECLAIM" class="reclaim-but shadow-button trans-02s trans-color" /> -->
+                </span>
+              </div>
             </div>
          </div>
          </div>

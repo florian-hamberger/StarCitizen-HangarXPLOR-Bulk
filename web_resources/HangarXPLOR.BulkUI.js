@@ -207,10 +207,21 @@ HangarXPLOR._callbacks.Melt = function (e) {
     e.preventDefault();
     window.Main.closeModal();
 
+    var itemListContainsZeroValuePledge = false;
+    var itemTable = "";
+    for (let i = 0; i < HangarXPLOR._meltable.length; i++) {
+        itemTable += "<tr><td><p>" + HangarXPLOR._meltable[i].displayName + "</p></td>"
+        + "<td><p>" + HangarXPLOR._meltable[i].pledge_cost + "</p></td></tr>";
+        if (HangarXPLOR._meltable[i].melt_value <= 0.5) {
+            itemListContainsZeroValuePledge = true;
+        }
+    }
+
     var data = {
-        item_price: '$' + HangarXPLOR._selectedMelt.toLocaleString('en-US', { minimumFractionDigits: 2 }),
-        item_name: HangarXPLOR._meltable.length + ' Ships',
+        items_total_price: '$' + HangarXPLOR._selectedMelt.toLocaleString('en-US', { minimumFractionDigits: 2 }),
+        item_count: HangarXPLOR._meltable.length,
         items: HangarXPLOR._meltable,
+        item_table: itemTable,
     };
 
     HangarXPLOR.BulkUI.modal = new RSI.Lightbox({
