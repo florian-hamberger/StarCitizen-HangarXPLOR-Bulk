@@ -328,7 +328,7 @@ HangarXPLOR._callbacks.MeltConfirm = function (e) {
                 }
 
                 if (--totalCallbacks > 0) {
-                    setTimeout(function () { meltNext(); }, 3000);
+                    setTimeout(function () { meltNext(); }, 250);
                 } else {
                     if(totalSuccess > 0) {
                         auto_refresh = document.getElementById('auto_refresh_reclaim').checked;
